@@ -3,12 +3,15 @@ const listContainer= document.querySelector(".list-container");
 const addButton= document.querySelector("#add-button");
 
 addButton.addEventListener("click", () =>{
-    if(taskBox.value===""){
+
+    let value = taskBox.value.trim();
+
+    if(value===""){
         alert("Need to Add Task");
     }
     else{
         let task = document.createElement("li"); 
-        task.innerHTML = taskBox.value;
+        task.innerHTML = value;
         listContainer.appendChild(task);
 
         let cross= document.createElement("span");
